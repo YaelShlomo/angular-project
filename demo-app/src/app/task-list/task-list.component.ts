@@ -15,6 +15,8 @@ export class TaskListComponent implements OnInit {
 
   //taskList: Task[] = this.taskService.getTask();
 
+  taskList: Task[] = [];
+
   title: string = 'Task List title';
 
   changeTaskListTitle() {

@@ -1,0 +1,13 @@
+<div>
+    {{title}}
+    <ul>
+        <li *ngFor="let item of taskList">
+            {{item.id}} - {{item.name}}
+            <button (click)="editTask(item)">Edit</button>
+            <button (click)="deleteTask(item.id)">Delete</button>
+        </li>
+    </ul>
+</div>
+<button (click)="addNewTask()">Add new task</button>
+<!-- <app-task-details [task]="selectedTask" (onSaveTask)="addTaskToList($event)"></app-task-details> -->
+<app-task-details-form [task]="selectedTask" (onSaveTask)="addTaskToList($event)"></app-task-details-form>

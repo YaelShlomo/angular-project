@@ -1,0 +1,22 @@
+reactive form
+<div *ngIf="task">
+    {{task | json}};
+    <br>
+    {{taskForm.value | json}}
+    <form [formGroup]="taskForm">
+        <br>
+        id:
+        {{task.id}}
+        <!-- <input type="text" formControlName="id"> -->
+        <br>
+        name:
+        <input type="text" formControlName="name">
+        <div *ngIf="taskForm.controls['name'].errors?.['required'] && taskForm.controls['name'].dirty">This field is required.</div>
+        <div *ngIf="taskForm.controls['name'].errors?.['minlength']">This must be at least 2 chars.</div>
+        <br>
+        done:
+        <input type="text" formControlName="done">
+        <br>
+        <button (click)="saveTask()">Save</button>
+    </form>
+</div>

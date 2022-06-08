@@ -1,0 +1,19 @@
+<!-- <div *ngIf="task">
+    id: {{task.id}}
+    <br>
+    name: {{task.name}}
+</div> -->
+
+<div *ngIf="task">
+    {{task | json}};
+    <br/>
+    id: 
+    <input type="text" [value]="task.id">
+    <br>
+    name:
+    <input type="text" [(ngModel)]="task.name">
+    <div>This field is required.</div>
+    <br>
+    <button (click)="saveTask()">Save</button>
+</div>
+
